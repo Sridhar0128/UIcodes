@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Page</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f4f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: #da9ecb;
+    border-radius: 50px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 300px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid rgb(212, 199, 199);
+    border-radius: 4px;
+}
+
+button {
+    background-color: #9554e9;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.error {
+    color: red;
+    font-size: 15px;
+    display: none;
+}
+
+button:hover {
+    background-color: #ec8454;
+}
+</style>
+</head>
+<body>
+<div class="login-container">
+    <h1>Login</h1>
+   
+    <form id="loginForm">
+        <input type="text" name="Username" placeholder="Username" required>
+        <div class="error" id="usernameError">Username cannot be empty and must start with letters and contain numbers.</div>
+        <input type="password" name="Password" placeholder="Password" required>
+        <div class="error" id="passwordError">Password must be at least 16 characters long and include letters, numbers, and special characters.</div>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); 
+    
+    let isValid = true;
+    
+    const username = document.querySelector('input[name="Username"]').value;
+    const password = document.querySelector('input[name="Password"]').value;
+    const usernameError = document.getElementById("usernameError");
+    const passwordError = document.getElementById("passwordError");
+    
+
+    if (!/^[a-zA-Z][a-zA-Z0-9]*$/.test(username)) {
+        usernameError.style.display = "block";
+        isValid = false;
+    } else {
+        usernameError.style.display = "none";
+    }
+    
+    const passwordPattern = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{7,}$/;
+    if (!passwordPattern.test(password)) {
+        passwordError.style.display = "block";
+        isValid = false;
+    } else {
+        passwordError.style.display = "none";
+    }
+    
+    if (isValid) {
+        window.location.href = "menu.html";
+    } else {
+        alert("Please enter valid credentials.");
+    }
+});
+</script>
+
+</body>
+</html>
