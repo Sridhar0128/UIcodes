@@ -1,0 +1,19 @@
+<div class="dive">
+  <div class="sidebar">
+    <a routerLink="/">Home</a>
+    <a routerLink="/about">About</a> 
+     <a routerLink="/contact">Contact Info</a> 
+  </div>
+  
+  <div class="content">
+    <h1>HOME</h1>
+    
+    <hr>
+    <h2>FOOD MENU</h2>
+    <div id="menugrid">
+      <div  class="menu-item"   *ngFor="let item of fooditems" >
+          {{ item }}
+      </div>
+  
+  </div>
+</div>

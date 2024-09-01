@@ -1,0 +1,68 @@
+.dive{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: fixed;
+}
+.sidebar {
+    width: 200px;
+    background-color: #ce93a5;
+    padding-top: 20px;
+    position: fixed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sidebar a {
+    padding: 20px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(21, 18, 18);
+    display: block;
+    width: 80%;
+    position: relative;
+    
+}
+.sidebar a:hover {
+    background-color: rgb(241, 200, 200);
+    width: 160px;
+
+}
+.sidebar a:before {
+  
+    content: "";
+    color: blue;
+    padding-right: 15px;
+   
+}
+.content {
+    margin-left: 200px;
+    padding: 20px;
+    width: 100%;
+}
+h1 {
+    text-align: center;
+}
+#menugrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+   position: fixed;
+
+    
+}
+.menu-item {
+    background-color: #d9f1f1;
+    height: 150px;
+    display: flex;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+
+}
